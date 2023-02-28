@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactMailController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LaraveHttpClient;
+use App\Http\Controllers\{ContactMailController, CategoryController, LaraveHttpClient, StudentController};
+// use App\Http\Controllers\ContactMailController;
+// use App\Http\Controllers\CategoryController;
+// use App\Http\Controllers\LaraveHttpClient;
+// use App\Http\Controllers\StudentController;
 
 
 /*
@@ -35,3 +37,6 @@ Route::get('/httpClient/post/create', [LaraveHttpClient::class, 'store']);
 Route::get('/httpClient/post/show', [LaraveHttpClient::class, 'show']);
 Route::get('/httpClient/post/delete', [LaraveHttpClient::class, 'destroy']);
 Route::get('/httpClient/post/update', [LaraveHttpClient::class, 'update']);
+
+
+Route::get('/students', [StudentController::class, 'index']);
