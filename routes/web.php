@@ -22,9 +22,11 @@ use App\Http\Controllers\{ContactMailController, CategoryController, LaraveHttpC
 // static Route get(string $uri, array|string|callable|null $action = null)
 // static Route view(string $uri, string $view, array $data = [], int|array $status = 200, array $headers = [])
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::view('/', 'home');
 Route::view('/terms', 'staticPages.terms', ["copyright"=>2003,"location"=>"Hyderabad"]);
 Route::resource('/categories', CategoryController::class); // resourceful controller
 
@@ -39,4 +41,5 @@ Route::get('/httpClient/post/delete', [LaraveHttpClient::class, 'destroy']);
 Route::get('/httpClient/post/update', [LaraveHttpClient::class, 'update']);
 
 
+// seeder and factories example
 Route::get('/students', [StudentController::class, 'index']);
